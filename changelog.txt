@@ -1,0 +1,11 @@
+2025-02-25 made public (v1.0.1)
+- forked from https://github.com/oskarwickstrom/monospace-web
+- bash script to build HTML & PDF from markdown
+- css & js:
+    - added clickable/linkable heading anchors
+    - added code blocks
+    - added blockquotes
+    - added (product) cards
+    - grid changes
+    - added new hr style
+    - added dark mode toggle & related image color adjustments
