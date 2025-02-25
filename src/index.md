@@ -1,67 +1,85 @@
 ---
-title: The Monospace Web
-subtitle: A minimalist design exploration
-author: Oskar Wickström
-author-url: "https://wickstrom.tech"
+title: CSS Features Demo
+subtitle: Showcasing all available styles
+author: Demo Author
+author-url: "https://example.com"
 lang: en
 toc-title: Contents
 ---
 
-## Introduction
 
-Monospace fonts are dear to many of us. 
-Some find them more readable, consistent, and beautiful, than their proportional alternatives.
-Maybe we're just brainwashed from spending years in terminals?
-Or are we hopelessly nostalgic?
-I'm not sure.
-But I like them, and that's why I started experimenting with all-monospace Web.
+<br>
 
-On this page, I use a monospace grid to align text and draw diagrams.
-It's generated from a simple Markdown document (using Pandoc), and the CSS and a tiny bit of Javascript renders it on the grid.
-The page is responsive, shrinking in character-sized steps.
-Standard elements should _just work_, at least that's the goal.
-It's semantic HTML, rendered as if we were back in the 70s.
+# Pandoc Monospace Web
 
-All right, but is this even a good idea?
-It's a technical and creative challenge and I like the aestethic.
-If you'd like to use it, feel free to fork or copy the bits you need, respecting the license.
-I might update it over time with improvements and support for more standard elements.
+This is a simple Pandoc based Static Site Generator
+based on the Monospace Web project by Oskar Wickström.
 
-## The Basics
+1. Install pandoc 
+2. Drop Markdown files in the src directory
+3. Execute the convert.sh script
+4. Deploy the build directory to your static site host
 
-This document uses a few extra classes here and there, but mostly it's just markup.
-This, for instance, is a regular paragraph.
+Given that the site generator consits of a single bash script, 
+single html template and a css file, it's easy to customize.
 
-Look at this horizontal break:
+All changes to the original project are unlicensed (C0).
+The Monospace Web is licensed under the MIT license.
+
+<hr class="thin">
+
+This is a demo page showcasing all the available styles for the Pandoc Monospace Web.
+All standard Pandoc markdown features are supported [^1].
+
+See the footer for "blog" implementation idea.
+
+- Github repository: [frainfreeze/the-monospace-web-pandoc](https://github.com/frainfreeze/the-monospace-web-pandoc)
+- Original author GitHub: [owickstrom/the-monospace-web](https://github.com/owickstrom/the-monospace-web)
+
+<hr class="thin">
+
+## Typography
+
+# H1 Heading (Uppercase)
+## H2 Heading (Uppercase)
+### H3 Heading
+#### H4 Heading
+##### H5 Heading
+###### H6 Heading
+
+Regular paragraph with **bold text**, *italic text*, and `inline code`. Here's a [link to somewhere](https://example.com).
+
+Text with a sub<sub>script</sub>.
+
+## Horizontal Rules
+
+Default horizontal rule:
 
 <hr>
 
-Lovely. We can hide stuff in the `<details`> element:
+Thin variant:
 
-<details>
-<summary>A short summary of the contents</summary>
-<p>Hidden gems.</p>
-</details>
+<hr class="thin">
 
 ## Lists
 
-This is a plain old bulleted list:
+Unordered list:
 
-* Banana
-* Paper boat
-* Cucumber
-* Rocket
+* Item one
+* Item two
+* Item three
+    * Nested item
+    * Another nested item
 
-Ordered lists look pretty much as you'd expect:
+Ordered list:
 
-1. Goals
-1. Motivations
-    1. Intrinsic
-    1. Extrinsic
-1. Second-order effects
+1. First item
+2. Second item
+    1. Nested numbered
+    2. Another nested
+3. Third item
 
-It's nice to visualize trees.
-This is a regular unordered list with a `tree` class:
+Tree view:
 
 <ul class="tree"><li><p style="margin: 0;"><strong>/dev/nvme0n1p2</strong></p>
 
@@ -85,6 +103,7 @@ This is a regular unordered list with a `tree` class:
 * tmp                               
 
 </li></ul>
+
 
 ## Tables
 
@@ -126,18 +145,17 @@ Here are some buttons:
 
 And inputs:
 
-<form class="grid">
-<label>First name <input type="text" placeholder="Placeholder..." /></label>
-<label>Last name <input type="text" placeholder="Text goes here..." /></label>
-<label>Age <input type="text" value="30" /></label>
+<form>
+    <label>First name <input type="text" placeholder="Placeholder..." /></label>
+    <label>Age <input type="text" value="30" /></label>
+    <label>Disabled Input <input type="text" disabled value="Can't edit" /></label>
 </form>
 
-And radio buttons:
-
+### Radio & Checkboxes
 <form class="grid">
-<label><input name="radio" type="radio" /> Option #1</label>
-<label><input name="radio" type="radio" /> Option #2</label>
-<label><input name="radio" type="radio" /> Option #3</label>
+    <label><input type="checkbox" /> Checkbox Option</label>
+    <label><input type="radio" name="group1" /> Radio 1</label>
+    <label><input type="radio" name="group1" /> Radio 2</label>
 </form>
 
 ## Grids
@@ -157,7 +175,42 @@ If we want one cell to fill the remainder, we set `flex-grow: 1;` for that parti
 
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3!" style="flex-grow: 1;" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" /></div>
 
-## ASCII Drawings
+## Code Blocks
+
+Inline code: `const example = "hello world";`
+
+Fenced code block:
+
+```javascript
+function demo() {
+  return {
+    hello: "world",
+    number: 42
+  };
+}
+```
+
+
+## Blockquotes
+
+> This is a blockquote
+> It can span multiple lines
+> And can contain *formatted* **text**
+
+> Nested blockquotes
+>> Are also possible
+>>> And can go deeper
+
+## Details/Summary
+
+<details>
+<summary>Click to expand</summary>
+<p>Hidden content goes here</p>
+<p>Can contain any other elements</p>
+</details>
+
+
+## ASCII Art & Diagrams
 
 We can draw in `<pre>` tags using [box-drawing characters](https://en.wikipedia.org/wiki/Box-drawing_characters):
 
@@ -211,22 +264,54 @@ Let's go wild and draw a chart!
       Socks     Jeans     Shirts   USB Drives
 </pre></figure>
 
-## Media
 
-Media objects are supported, like images and video:
+## Product Cards
 
-![A room in an old French castle (2024)](castle.jpg)
+Product cards are useful for displaying items with images, descriptions, and actions:
 
-![[The Center of the Web (1914), Wikimedia](https://en.wikisource.org/wiki/Page:The_Center_of_the_Web_(1914).webm/11)](https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm)
+<div class="product-card">
+  <img src="./files/images/example.jpg" alt="Product image">
+  <h3>Product Title</h3>
+  <p>This is a description of the product with all its amazing features.</p>
+  <table>
+    <tr>
+      <th>Price</th>
+      <td>$99.99</td>
+    </tr>
+    <tr>
+      <th>Rating</th>
+      <td>★★★★☆</td>
+    </tr>
+  </table>
+  <nav>
+    <a href="#">Details</a>
+    <a href="#">Buy Now</a>
+  </nav>
+</div>
+
+## Media with Captions
+
+Media objects are supported, like images and video with captions:
+
+![A sample image with caption (2024)](./files/img/castle.jpg)
 
 They extend to the width of the page, and add appropriate padding in the bottom to maintain the monospace grid.
 
-## Discussion
+![Example image alt text]()
 
-That's it for now.
-I've very much enjoyed making this, pushing my CSS chops and having a lot of fun with the design.
-If you like it or even decide to use it, please [let me know](https://x.com/owickstrom).
+<video src="https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm" controls></video>
 
-The full source code is here: [github.com/owickstrom/the-monospace-web](https://github.com/owickstrom/the-monospace-web)
+### Theme-Aware Images
 
-Finally, a massive shout-out to [U.S. Graphics Company](https://x.com/usgraphics) for all the inspiration.
+Images can adapt to light and dark themes (convert theme using lightbulb icon in the footer or system settings):
+
+<div class="grid">
+<img height="150px" class="theme-aware-image" src="./files/img/Nicaragua1_1913.jpg" alt="This image inverts in dark mode">
+
+<img height="150px" class="theme-aware-image no-invert" src="./files/img/Nicaragua1_1913.jpg" alt="This image stays the same in both modes">
+
+<img height="150px" class="theme-aware-image adjust-contrast" src="./files/img/Nicaragua1_1913.jpg" alt="This image adjusts contrast in dark mode">
+</div>
+
+
+[^1]: Pandoc understands an extended and slightly revised version of John Gruber’s Markdown syntax. See [Pandoc’s Markdown](https://pandoc.org/chunkedhtml-demo/8-pandocs-markdown.html) for details.
