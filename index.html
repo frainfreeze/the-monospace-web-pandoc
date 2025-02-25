@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc-monospace-v1.0.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Demo Author" />
+  <link rel="shortcut icon" href="/files/img/favicon.ico">
+  <title>CSS Features Demo</title>
+  <link rel="stylesheet" href="files/css/reset.css" />
+  <link rel="stylesheet" href="files/css/index.css" />
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td colspan="2" rowspan="2" class="width-auto">
+      <h1 class="title">CSS Features Demo</h1>
+      <span class="subtitle">Showcasing all available styles</span>
+    </td>
+    <th>Version</th>
+    <td class="width-min">v1740503848</td>
+  </tr>
+  <tr>
+    <th>Updated</th>
+    <td class="width-min"><time style="white-space: pre;">2025-02-25</time></td>
+  </tr>
+</table>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Contents</h2>
+<ul class="incremental">
+<li><a href="#pandoc-monospace-web">Pandoc Monospace Web</a>
+<ul class="incremental">
+<li><a href="#typography">Typography</a></li>
+</ul></li>
+<li><a href="#h1-heading-uppercase">H1 Heading (Uppercase)</a>
+<ul class="incremental">
+<li><a href="#h2-heading-uppercase">H2 Heading (Uppercase)</a>
+<ul class="incremental">
+<li><a href="#h3-heading">H3 Heading</a></li>
+</ul></li>
+<li><a href="#horizontal-rules">Horizontal Rules</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#forms">Forms</a>
+<ul class="incremental">
+<li><a href="#radio-checkboxes">Radio &amp; Checkboxes</a></li>
+</ul></li>
+<li><a href="#grids">Grids</a></li>
+<li><a href="#code-blocks">Code Blocks</a></li>
+<li><a href="#blockquotes">Blockquotes</a></li>
+<li><a href="#detailssummary">Details/Summary</a></li>
+<li><a href="#ascii-art-diagrams">ASCII Art &amp; Diagrams</a></li>
+<li><a href="#product-cards">Product Cards</a></li>
+<li><a href="#media-with-captions">Media with Captions</a>
+<ul class="incremental">
+<li><a href="#theme-aware-images">Theme-Aware Images</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<p><br></p>
+<h1 id="pandoc-monospace-web">Pandoc Monospace Web</h1>
+<p>This is a simple Pandoc based Static Site Generator based on the
+Monospace Web project by Oskar Wickström.</p>
+<ol class="incremental" type="1">
+<li>Install pandoc</li>
+<li>Drop Markdown files in the src directory</li>
+<li>Execute the convert.sh script</li>
+<li>Deploy the build directory to your static site host</li>
+</ol>
+<p>Given that the site generator consits of a single bash script, single
+html template and a css file, it’s easy to customize.</p>
+<p>All changes to the original project are unlicensed (C0). The
+Monospace Web is licensed under the MIT license.</p>
+<hr class="thin">
+<p>This is a demo page showcasing all the available styles for the
+Pandoc Monospace Web. All standard Pandoc markdown features are
+supported <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p>
+<p>See the footer for “blog” implementation idea.</p>
+<ul class="incremental">
+<li>Github repository: <a
+href="https://github.com/frainfreeze/the-monospace-web-pandoc">frainfreeze/the-monospace-web-pandoc</a></li>
+<li>Original author GitHub: <a
+href="https://github.com/owickstrom/the-monospace-web">owickstrom/the-monospace-web</a></li>
+</ul>
+<hr class="thin">
+<h2 id="typography">Typography</h2>
+<h1 id="h1-heading-uppercase">H1 Heading (Uppercase)</h1>
+<h2 id="h2-heading-uppercase">H2 Heading (Uppercase)</h2>
+<h3 id="h3-heading">H3 Heading</h3>
+<h4 id="h4-heading">H4 Heading</h4>
+<h5 id="h5-heading">H5 Heading</h5>
+<h6 id="h6-heading">H6 Heading</h6>
+<p>Regular paragraph with <strong>bold text</strong>, <em>italic
+text</em>, and <code>inline code</code>. Here’s a <a
+href="https://example.com">link to somewhere</a>.</p>
+<p>Text with a sub<sub>script</sub>.</p>
+<h2 id="horizontal-rules">Horizontal Rules</h2>
+<p>Default horizontal rule:</p>
+<hr>
+<p>Thin variant:</p>
+<hr class="thin">
+<h2 id="lists">Lists</h2>
+<p>Unordered list:</p>
+<ul class="incremental">
+<li>Item one</li>
+<li>Item two</li>
+<li>Item three
+<ul class="incremental">
+<li>Nested item</li>
+<li>Another nested item</li>
+</ul></li>
+</ul>
+<p>Ordered list:</p>
+<ol class="incremental" type="1">
+<li>First item</li>
+<li>Second item
+<ol class="incremental" type="1">
+<li>Nested numbered</li>
+<li>Another nested</li>
+</ol></li>
+<li>Third item</li>
+</ol>
+<p>Tree view:</p>
+<ul class="tree">
+<li>
+<p style="margin: 0;">
+<strong>/dev/nvme0n1p2</strong>
+</p>
+<ul class="incremental">
+<li>usr
+<ul class="incremental">
+<li>local<br />
+</li>
+<li>share<br />
+</li>
+<li>libexec<br />
+</li>
+<li>include<br />
+</li>
+<li>sbin<br />
+</li>
+<li>src<br />
+</li>
+<li>lib64<br />
+</li>
+<li>lib<br />
+</li>
+<li>bin<br />
+</li>
+<li>games
+<ul class="incremental">
+<li>solitaire</li>
+<li>snake</li>
+<li>tic-tac-toe</li>
+</ul></li>
+<li>media<br />
+</li>
+</ul></li>
+<li>media<br />
+</li>
+<li>run<br />
+</li>
+<li>tmp</li>
+</ul>
+</li>
+</ul>
+<h2 id="tables">Tables</h2>
+<p>We can use regular tables that automatically adjust to the monospace
+grid. They’re responsive.</p>
+<table>
+<thead>
+<tr>
+<th class="width-min">
+Name
+</th>
+<th class="width-auto">
+Dimensions
+</th>
+<th class="width-min">
+Position
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Boboli Obelisk
+</td>
+<td>
+1.41m × 1.41m × 4.87m
+</td>
+<td>
+43°45’50.78”N 11°15’3.34”E
+</td>
+</tr>
+<tr>
+<td>
+Pyramid of Khafre
+</td>
+<td>
+215.25m × 215.25m × 136.4m
+</td>
+<td>
+29°58’34”N 31°07’51”E
+</td>
+</tr>
+</tbody>
+</table>
+<p>Note that only one column is allowed to grow.</p>
+<h2 id="forms">Forms</h2>
+<p>Here are some buttons:</p>
+<nav>
+<button>
+Reset
+</button>
+<button>
+Save
+</button>
+</nav>
+<p>And inputs:</p>
+<form>
+<label>First name
+<input type="text" placeholder="Placeholder..." /></label> <label>Age
+<input type="text" value="30" /></label> <label>Disabled Input
+<input type="text" disabled value="Can't edit" /></label>
+</form>
+<h3 id="radio-checkboxes">Radio &amp; Checkboxes</h3>
+<form class="grid">
+<label><input type="checkbox" /> Checkbox Option</label>
+<label><input type="radio" name="group1" /> Radio 1</label>
+<label><input type="radio" name="group1" /> Radio 2</label>
+</form>
+<h2 id="grids">Grids</h2>
+<p>Add the <code>grid</code> class to a container to divide up the
+horizontal space evenly for the cells. Note that it maintains the
+monospace, so the total width might not be 100%. Here are six grids with
+increasing cell count:</p>
+<div class="grid">
+<input readonly value="1" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" />
+</div>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" />
+</div>
+<p>If we want one cell to fill the remainder, we set
+<code>flex-grow: 1;</code> for that particular cell.</p>
+<div class="grid">
+<input readonly value="1" /><input readonly value="2" /><input readonly value="3!" style="flex-grow: 1;" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" />
+</div>
+<h2 id="code-blocks">Code Blocks</h2>
+<p>Inline code: <code>const example = "hello world";</code></p>
+<p>Fenced code block:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">demo</span>() {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">hello</span><span class="op">:</span> <span class="st">&quot;world&quot;</span><span class="op">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">number</span><span class="op">:</span> <span class="dv">42</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h2 id="blockquotes">Blockquotes</h2>
+<blockquote>
+<p>This is a blockquote It can span multiple lines And can contain
+<em>formatted</em> <strong>text</strong></p>
+</blockquote>
+<blockquote>
+<p>Nested blockquotes &gt; Are also possible &gt;&gt; And can go
+deeper</p>
+</blockquote>
+<h2 id="detailssummary">Details/Summary</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>
+Hidden content goes here
+</p>
+<p>
+Can contain any other elements
+</p>
+</details>
+<h2 id="ascii-art-diagrams">ASCII Art &amp; Diagrams</h2>
+<p>We can draw in <code>&lt;pre&gt;</code> tags using <a
+href="https://en.wikipedia.org/wiki/Box-drawing_characters">box-drawing
+characters</a>:</p>
+<pre><code>╭─────────────────╮
+│ MONOSPACE ROCKS │
+╰─────────────────╯</code></pre>
+<p>To have it stand out a bit more, we can wrap it in a
+<code>&lt;figure&gt;</code> tag, and why not also add a
+<code>&lt;figcaption&gt;</code>.</p>
+<figure>
+<pre>
+┌───────┐ ┌───────┐ ┌───────┐
+│Actor 1│ │Actor 2│ │Actor 3│
+└───┬───┘ └───┬───┘ └───┬───┘
+    │         │         │    
+    │         │  msg 1  │    
+    │         │────────►│    
+    │         │         │    
+    │  msg 2  │         │    
+    │────────►│         │    
+┌───┴───┐ ┌───┴───┐ ┌───┴───┐
+│Actor 1│ │Actor 2│ │Actor 3│
+└───────┘ └───────┘ └───────┘</pre>
+<figcaption>
+Example: Message passing.
+</figcaption>
+</figure>
+<p>Let’s go wild and draw a chart!</p>
+<figure>
+<pre>
+                      Things I Have
+                                              
+    │                                     ████ Usable
+15  │
+    │                                     ░░░░ Broken
+    │
+12  │             ░            
+    │             ░            
+    │   ░         ░              
+ 9  │   ░         ░              
+    │   ░         ░              
+    │   ░         ░                    ░
+ 6  │   █         ░         ░          ░
+    │   █         ░         ░          ░
+    │   █         ░         █          ░
+ 3  │   █         █         █          ░
+    │   █         █         █          ░
+    │   █         █         █          ░
+ 0  └───▀─────────▀─────────▀──────────▀─────────────
+      Socks     Jeans     Shirts   USB Drives
+</pre>
+</figure>
+<h2 id="product-cards">Product Cards</h2>
+<p>Product cards are useful for displaying items with images,
+descriptions, and actions:</p>
+<div class="product-card">
+<img src="./files/images/example.jpg" alt="Product image">
+<h3>
+Product Title
+</h3>
+<p>
+This is a description of the product with all its amazing features.
+</p>
+<table>
+<tr>
+<th>
+Price
+</th>
+<td>
+$99.99
+</td>
+</tr>
+<tr>
+<th>
+Rating
+</th>
+<td>
+★★★★☆
+</td>
+</tr>
+</table>
+<nav>
+<a href="#">Details</a> <a href="#">Buy Now</a>
+</nav>
+</div>
+<h2 id="media-with-captions">Media with Captions</h2>
+<p>Media objects are supported, like images and video with captions:</p>
+<figure>
+<img src="./files/img/castle.jpg"
+alt="A sample image with caption (2024)" />
+<figcaption aria-hidden="true">A sample image with caption
+(2024)</figcaption>
+</figure>
+<p>They extend to the width of the page, and add appropriate padding in
+the bottom to maintain the monospace grid.</p>
+<figure>
+<img src="" alt="Example image alt text" />
+<figcaption aria-hidden="true">Example image alt text</figcaption>
+</figure>
+<video src="https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm" controls>
+</video>
+<h3 id="theme-aware-images">Theme-Aware Images</h3>
+<p>Images can adapt to light and dark themes (convert theme using
+lightbulb icon in the footer or system settings):</p>
+<div class="grid">
+<p><img height="150px" class="theme-aware-image" src="./files/img/Nicaragua1_1913.jpg" alt="This image inverts in dark mode"></p>
+<p><img height="150px" class="theme-aware-image no-invert" src="./files/img/Nicaragua1_1913.jpg" alt="This image stays the same in both modes"></p>
+<p><img height="150px" class="theme-aware-image adjust-contrast" src="./files/img/Nicaragua1_1913.jpg" alt="This image adjusts contrast in dark mode"></p>
+</div>
+<section class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Pandoc understands an extended and
+slightly revised version of John Gruber’s Markdown syntax. See <a
+href="https://pandoc.org/chunkedhtml-demo/8-pandocs-markdown.html">Pandoc’s
+Markdown</a> for details.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+<table>
+  <tr>
+    <td class="width-auto">
+      <a style="text-decoration: none;" href="https://frainfreeze.github.io/the-monospace-web-pandoc/">Home</a> •
+      <a style="text-decoration: none;" href="https://frainfreeze.github.io/the-monospace-web-pandoc/blog/index.html">Blog</a> •
+      <a style="text-decoration: none;" href="">©Copyright 2025</a> •
+      <span onclick="toggleTheme()" class="theme-toggle" title="Toggle theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+        </svg>
+      </span>
+    </td>
+  </tr>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check for saved theme preference, otherwise use system preference
+    const theme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    // Apply theme
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Add anchor links to headers
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+      if (heading.id) {
+        const anchor = document.createElement('a');
+        anchor.href = '#' + heading.id;
+        anchor.className = 'header-anchor';
+        anchor.textContent = '#';
+        const headingText = heading.textContent || '';
+        anchor.setAttribute('aria-label', 'Link to header' + headingText);
+        heading.appendChild(anchor);
+      }
+    });
+  });
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+</script>
+</body>
+</html>
